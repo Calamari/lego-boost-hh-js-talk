@@ -107,10 +107,10 @@
         </section>
         <section>
           <section>
-            <h1>Let's talk about Ads</h1>
+            <h2>Let's talk about Ads</h2>
 
             <div class="fragment">
-              <h2>Bluetooth Advertisement</h2>
+              <h3>Bluetooth Advertisement</h3>
 
               <p>3 out of 40 Channels are Advertisement channels</p>
               <img
@@ -256,7 +256,7 @@ descriptors: null
         </section>
         <section>
           <section data-open-up="true">
-            <h1>Hacking the<br>Move Hub</h1>
+            <h2>Hacking the<br>Move Hub</h2>
           </section>
           <section>
             <h3>Timeline</h3>
@@ -340,7 +340,7 @@ descriptors: null
 
         <section>
           <section>
-            <h3>Message structure explained</h3>
+            <h2>Message structure explained</h2>
           </section>
           <section>
             <h4>Message length</h4>
@@ -420,6 +420,58 @@ PORT_VOLTAGE = 0x3c;</code></pre>
 
         <section>
           <section>
+            <h2>What is possible?</h2>
+          </section>
+
+          <section>
+            <h3>Peripherals</h3>
+            <ul>
+              <li class="fragment">2 built-in motors</li>
+              <li class="fragment">1 built-in LED</li>
+              <li class="fragment">1 built-in tilt sensor</li>
+              <li class="fragment">1 built-in current sensor</li>
+              <li class="fragment">1 built-in voltage sensor</li>
+              <li class="fragment">1 external motor</li>
+              <li class="fragment">1 external module with light & distance sensor</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Commands</h3>
+            <ul>
+              <li class="fragment">motors: turn, stop, turn for time, turn for degrees</li>
+              <li class="fragment">LED: 10 colors</li>
+            </ul>
+          </section>
+
+          <section>
+            <h3>Subscribing</h3>
+            <ul>
+              <li class="fragment">motors: degrees turned since start of Hub</li>
+              <li class="fragment">tilt sensor: Roll & pitch <span class="smaller">(3 axis accelaration?)</span></li>
+              <li class="fragment">distance sensor: distances in full inch <span class="smaller">(up to 10 inches)</span></li>
+              <li class="fragment">light sensor: 10 Colors <span class="smaller">(and maybe RGB colors?)</span></li>
+            </ul>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h2>What is not possible?</h2>
+          </section>
+
+          <section>
+            <h3>You cannot use it as a catapult.</h3>
+            <p class="fragment">Believe me, I tried.</p>
+          </section>
+
+          <section style="height: 100%" data-play-video="catapult-video">
+            <video src="videos/catapult.mp4" id="catapult-video" style="height: 100%"></video>
+          </section>
+        </section>
+
+        <section>
+          <section>
             <h4>Some experiences made</h4>
             <ul>
               <li class="fragment">Queue up your packages <span class="smaller">(it will garble the message otherwise)</span></li>
@@ -430,7 +482,8 @@ PORT_VOLTAGE = 0x3c;</code></pre>
           </section>
           <section>
             <h4>The accumulated experience in code</h4>
-            <div><a href="https://github.com/Calamari/boost-movehub">github.com/Calamari/boost-movehub</a></div>
+            <p><a href="https://github.com/Calamari/boost-movehub">github.com/Calamari/boost-movehub</a></p>
+            <div class="smaller">incl. high-level interface for R2D2</div>
           </section>
         </section>
 
@@ -518,6 +571,9 @@ PORT_VOLTAGE = 0x3c;</code></pre>
         }
         if (event.currentSlide.attributes["data-open-up"]) {
           openUp(90);
+        }
+        if (event.currentSlide.attributes["data-play-video"]) {
+          document.getElementById(event.currentSlide.getAttribute("data-play-video")).play()
         }
         // event.previousSlide, event.currentSlide, event.indexh, event.indexv
       });
