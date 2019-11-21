@@ -276,6 +276,10 @@ body {
   width: 90%;
   margin: 20px auto;
 }
+img.pure {
+  background: none !important;
+  border: none !important;
+}
 
 /*********************************************
   * LINKS
